@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  tabby:
+    restart: always
+    image: tabbyml/tabby:latest
+    command: serve --model StarCoder-1B --chat-model Qwen2-1.5B-Instruct --device cpu
+    volumes:
+      - "$HOME/.tabby:/data"
+    ports:
+      - "8080:8080"
